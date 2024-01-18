@@ -1,0 +1,29 @@
+@import "../../styles/App";
+
+.social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+    @media screen and (max-width: 768px){
+        margin-right: 3rem;
+    }
+    @media screen and (max-width: 500px){
+        display: none;
+    }
+    a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
+        padding: 0.5rem;
+        border-radius: 50%;
+        color: $color-5;
+        transition: background 0.3s ease, color 0.3s ease;
+
+        &:hover{
+            color: $color-9;
+            background: $color-12;
+        }
+    }
+}

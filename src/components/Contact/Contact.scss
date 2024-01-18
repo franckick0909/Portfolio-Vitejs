@@ -1,0 +1,22 @@
+@import "../../styles/App";
+
+
+.contact {
+    margin: auto;
+    width: 100%;
+    height: auto;
+    padding: 6rem 0;
+    // box-shadow: 0 0 80px $color-9;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        position: relative;
+        gap: 2.5rem;
+
+        padding: 0 2rem;
+    }
+}

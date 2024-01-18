@@ -1,0 +1,151 @@
+@import "../../styles/App";
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        width: 100%;
+
+        .projectsNav {
+            display: flex;
+
+            ul {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                list-style: none;
+                margin-top: 2rem;
+                gap: 1.5rem;
+
+                @media screen and (max-width: 768px) {
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+
+                .btn-projects {
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    border: none;
+                    cursor: pointer;
+                    color: $color-7;
+                    padding: 0.5rem 1rem;
+                    border-radius: 4px;
+                    background: $color-2;
+                    text-transform: capitalize;
+                    transition: all 0.2s ease;
+
+                    &:hover {
+                        color: $color-9;
+                        background: $color-5;
+                    }
+
+                    &.active {
+                        color: $color-9;
+                        background: $color-5;
+                    }
+                }
+            }
+        }
+
+        &__image {
+            display: flex;
+            max-width: 1440px;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 0;
+
+            .projectsImage {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                flex-wrap: wrap;
+                
+
+                &.show{
+                    opacity: 1;
+                }
+
+                .project {
+                    position: relative;
+                    cursor: pointer;
+                    transition: all 1s ease;
+
+                    img {
+                        display: block;
+                        max-width: 25rem;
+                        width: 100%;
+                        object-fit: cover;
+                        border-radius: 15px;
+                        transition: all 0.3s ease;
+                    }
+
+                    &__overlay{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0,0,0,0.8);
+                        border-radius: 15px;
+                        opacity: 0;
+                        transition: all 0.3s ease;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        &:hover{
+                            opacity: 1;
+                        }
+
+                        &__content{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 1rem;
+                            padding: 1rem;
+                            color: $color-9;
+
+                            h3{
+                                font-size: clamp(1.5rem, 5vw, 2rem);
+                                font-weight: 600;
+                                text-align: center;
+                                color: $color-6;
+                                transition: all 0.3s ease;
+
+                                &:hover{
+                                    color: $color-5;
+                                }
+                            }
+
+                            .details{
+                                font-size: clamp(0.8rem, 3vw, 1rem);
+                                font-weight: 400;
+                                text-align: center;
+                                color: $color-8;
+                                max-width: 600px;
+                                transition: all 0.3s ease;
+                                
+
+                                &:hover{
+                                    color: $color-7;
+                                }
+                            }
+                        }
+
+                    }
+
+                }
+            }
+        }
+    }
+}
