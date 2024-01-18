@@ -1,25 +1,34 @@
 import "./Project.scss";
-import img1 from "../../assets/img/projects/p1.webp";
-import img2 from "../../assets/img/projects/p2.webp";
-import img3 from "../../assets/img/projects/p3.webp";
-import img4 from "../../assets/img/projects/p4.webp";
-import img5 from "../../assets/img/projects/p5.webp";
-import img6 from "../../assets/img/projects/p6.webp";
+// import img1 from "../../assets/img/projects/p1.webp";
+// import img2 from "../../assets/img/projects/p2.webp";
+// import img3 from "../../assets/img/projects/p3.webp";
+// import img4 from "../../assets/img/projects/p4.webp";
+// import img5 from "../../assets/img/projects/p5.webp";
+// import img6 from "../../assets/img/projects/p6.webp";
+
+import img1 from "../../assets/img/projects/sophie bluel/sophie bluel1.png";
+import img2 from "../../assets/img/projects/kasa/kasa1.png";
+import img3 from "../../assets/img/projects/ohmyfood/ohmyfood1.png";
+import img4 from "../../assets/img/projects/netprime/netprime1.png";
+import img5 from "../../assets/img/projects/portfolio/portfolio2.png";
+import img6 from "../../assets/img/projects/cv/CV.png"
+
+
 import { useState } from "react";
 import Social from "../Social/Social";
 
 const Project = () => {
     const [filter, setFilter] = useState("all");
     const [activeButton, setActiveButton] = useState("all");
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(true);
 
   const projects = [
-    { id: 1, category: "cat1", image: img1, name: "UI/UX Design" },
-    { id: 2, category: "cat2", image: img2, name: "Web Development" },
-    { id: 3, category: "cat3", image: img3, name: "Branding" },
-    { id: 4, category: "cat2", image: img4, name: "Web Development" },
-    { id: 5, category: "cat1", image: img5, name: "UI/UX Design" },
-    { id: 6, category: "cat3", image: img6, name: "Branding" },
+    { id: 1, category: "cat2", image: img1, name: "Sophie Bluel",  },
+    { id: 2, category: "cat3", image: img2, name: "Kasa",  },
+    { id: 3, category: "cat1", image: img3, name: "OhmyFood",  },
+    { id: 4, category: "cat2", image: img4, name: "NetPrime",   },
+    { id: 5, category: "cat2", image: img5, name: "Portfolio #1",  },
+    { id: 6, category: "cat1", image: img6, name: "CV", },
   ];
 
   const filteredProjects = projects.filter((project) =>
@@ -55,7 +64,7 @@ const Project = () => {
                   ? { backgroundColor: "#DD0426", color: "#eff6ee" }
                   : {}
               }>
-              UI/UX Design
+              Html / Css
             </button>
             <button
               onClick={() => handleButtonClick("cat2")}
@@ -65,7 +74,7 @@ const Project = () => {
                   ? { backgroundColor: "#DD0426", color: "#eff6ee" }
                   : {}
               }>
-              Web Development
+              Html / CSS / JavaScript
             </button>
             <button
               onClick={() => handleButtonClick("cat3")}
@@ -75,7 +84,7 @@ const Project = () => {
                   ? { backgroundColor: "#DD0426", color: "#eff6ee" }
                   : {}
               }>
-              Branding
+              React / Vitejs
             </button>
           </ul>
         </nav>
@@ -87,6 +96,7 @@ const Project = () => {
                 key={project.id}
                 className="project">
                 <img src={project.image} alt="my projects" />
+                <h4>{project.name}</h4>
                 <div className="project__overlay">
                   <div className="project__overlay__content">
                     <h3>{project.name}</h3>

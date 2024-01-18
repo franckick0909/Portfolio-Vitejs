@@ -23,7 +23,6 @@
                 justify-content: space-evenly;
                 align-items: center;
                 list-style: none;
-                margin-top: 2rem;
                 gap: 1.5rem;
 
                 @media screen and (max-width: 768px) {
@@ -58,17 +57,16 @@
 
         &__image {
             display: flex;
-            max-width: 1440px;
             justify-content: center;
-            align-items: center;
             padding: 2rem 0;
 
             .projectsImage {
                 display: flex;
                 justify-content: center;
-                gap: 2rem;
+                column-gap: 2rem;
+                row-gap: 4rem;
                 flex-wrap: wrap;
-                
+                max-width: 1200px;
 
                 &.show{
                     opacity: 1;
@@ -76,16 +74,27 @@
 
                 .project {
                     position: relative;
+                    flex: 1 1 19rem;
+                    width: 100%;
+                    height: 100%;
+                    max-height: 18rem;
                     cursor: pointer;
                     transition: all 1s ease;
+                    border-radius: 15px;
 
                     img {
-                        display: block;
-                        max-width: 25rem;
                         width: 100%;
+                        height: 100%;
                         object-fit: cover;
                         border-radius: 15px;
                         transition: all 0.3s ease;
+                    }
+
+                    h4{
+                        font-size: clamp(0.9rem, 5vw, 1.2rem);
+                        font-weight: 600;
+                        text-align: center;
+                        color: $color-7;
                     }
 
                     &__overlay{
@@ -119,7 +128,7 @@
                                 font-size: clamp(1.5rem, 5vw, 2rem);
                                 font-weight: 600;
                                 text-align: center;
-                                color: $color-6;
+                                color: $color-9;
                                 transition: all 0.3s ease;
 
                                 &:hover{
